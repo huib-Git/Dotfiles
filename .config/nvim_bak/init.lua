@@ -1,0 +1,5 @@
+require("settings")
+require("autocmds")
+require("keymaps")
+require("lazyvim")
+require("bufferline").setup()

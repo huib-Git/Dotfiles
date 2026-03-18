@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdftotext \"/Users/huib/Downloads/H2 gelijkvoormigheid 13 ed.pdf\" - 2>/dev/null | head -200)",
+      "Bash(mkdir -p /tmp/pdf_pages && pdftoppm \"/Users/huib/Downloads/H2 gelijkvoormigheid 13 ed.pdf\" /tmp/pdf_pages/page -png -r 150 2>&1 | head -5)",
+      "Bash(for i:*)",
+      "Bash(tesseract --list-langs 2>&1)",
+      "Bash(tesseract /tmp/pdf_pages/page-01.png stdout -l eng 2>/dev/null)",
+      "Bash(tesseract /tmp/pdf_pages/page-01.png stdout 2>&1)",
+      "Bash(cd /tmp/pdf_pages && ls -la && tesseract page-01.png stdout 2>&1)"
+    ]
+  }
+}
